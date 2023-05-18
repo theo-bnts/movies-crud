@@ -1,0 +1,45 @@
+{% extends "base.jinja" %}
+
+{% block title %}
+    List
+{% endblock title %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/styles/list.css" />
+{% endblock head %}
+
+{% block content %}
+    <a href="/movie/new" class="button new">New</a>
+    {% for movie in movies %}
+        <div class="movie">
+            <img src="data:image/jpg;base64,{{ movie['cover'] }}" alt="Processed cover" />
+            <div class="informations">
+                <span class="title">{{ movie['title'] }}</span>
+                <div class="information">
+                    <span class="key">Description</span>
+                    <span class="value">{{ movie['description'] }}</span>
+                </div>
+                <div class="information">
+                    <span class="key">Year</span>
+                    <span class="value">{{ movie['year'] }}</span>
+                </div>
+                <div class="information">
+                    <span class="key">Director</span>
+                    <span class="value">{{ movie['director'] }}</span>
+                </div>
+                <div class="information">
+                    <span class="key">Actors</span>
+                    <div class="actors">
+                        {% for actor in movie['actors'] %}
+                            <span class="value actor">{{ actor }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="actions">
+                    <a href="/movie/{{ movie['id'] }}/edit" class="button edit">Edit</a>
+                    <a href="/movie/{{ movie['id'] }}/delete" class="button delete">Delete</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock content %}

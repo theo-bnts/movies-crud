@@ -1,0 +1,122 @@
+body
+{
+	display: flex;
+	flex-direction: column;
+	gap: 2vmax;
+	padding: 2vmax;
+}
+
+.movie
+{
+	align-items: center;
+	background-color: #fff2;
+	border-radius: 1vmax;
+	display: flex;
+	flex-direction: column;
+	gap: 2vmax;
+	padding: 2vmax;
+}
+
+
+img
+{
+	all: unset;
+	border-radius: 1vmax;
+	max-width: 100%;
+	overflow: clip;
+}
+
+
+.title
+{
+	font-size: xx-large;
+	font-weight: 700;
+}
+
+.informations
+{
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	gap: 1vmax;
+}
+
+.information
+{
+	display: flex;
+	flex-direction: column;
+	gap: 1vmax;
+}
+
+span
+{
+	all: unset;
+	display: block;
+}
+
+.key
+{
+	color: #fff8;
+}
+
+.value
+{
+	text-align: justify;
+}
+
+.actors
+{
+	line-height: 35px;
+}
+
+.actor
+{
+	background-color: #fff8;
+	border-radius: 100vmax;
+	display: inline;
+	padding: 0.3vmax 1vmax;
+	white-space: nowrap;
+}
+
+.actions
+{
+	display: flex;
+	gap: 1vmax;
+}
+
+.button
+{
+	all: unset;
+	border-radius: 1vmax;
+	cursor: pointer;
+	padding: 1vmax;
+}
+
+.new
+{
+	background-color: #6631c9;
+	text-align: center;
+}
+
+.edit
+{
+	background-color: #008ac5;
+}
+
+.delete
+{
+	background-color: #c50000;
+}
+
+@media screen and (min-width: 800px)
+{
+	.movie
+	{
+		flex-direction: row;
+	}
+    
+    img
+	{
+		width: 20vw;
+	}
+}

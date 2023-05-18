@@ -1,0 +1,130 @@
+body
+{
+	display: flex;
+	flex-direction: column;
+	gap: 2vmax;
+	padding: 2vmax;
+}
+
+.movie
+{
+	align-items: center;
+	background-color: #fff2;
+	border-radius: 1vmax;
+	display: flex;
+	flex-direction: column;
+	gap: 2vmax;
+	padding: 2vmax;
+}
+
+.cover
+{
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: 1vmax;
+}
+
+img
+{
+	all: unset;
+	border-radius: 1vmax;
+	max-width: 100%;
+	overflow: clip;
+}
+
+input[type="file"]
+{
+	height: 1px;
+	opacity: 0;
+	width: 1px;
+}
+
+.button
+{
+	all: unset;
+	border-radius: 1vmax;
+	cursor: pointer;
+	padding: 1vmax;
+}
+
+.cover_label
+{
+	background-color: #6631c9;
+}
+
+.informations
+{
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	gap: 1vmax;
+}
+
+.information
+{
+	display: flex;
+	flex-direction: column;
+	gap: 1vmax;
+}
+
+span
+{
+	all: unset;
+	display: block;
+}
+
+.key
+{
+	color: #fff8;
+}
+
+input[type="text"],
+textarea,
+input[type="number"]
+{
+	all: unset;
+	background-color: white;
+	border-radius: 1vmax;
+	color: black;
+	display: block;
+	font-size: large;
+	padding: 1vmax;
+}
+
+.actors
+{
+	align-content: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1vmax;
+}
+
+.actions
+{
+	display: flex;
+	gap: 1vmax;
+}
+
+.edit
+{
+	background-color: #008ac5;
+}
+
+.delete
+{
+	background-color: #c50000;
+}
+
+@media screen and (min-width: 800px)
+{
+	.movie
+	{
+		flex-direction: row;
+	}
+
+	img
+	{
+		width: 20vw;
+	}
+}

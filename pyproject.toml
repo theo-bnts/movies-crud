@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "movies_crud"
+version = "0.1.0"
+description = ""
+authors = ["Théo BONTEMPS <theo.bontemps@etud.u-picardie.fr>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Flask = "^2.2.2"
+opencv-python = "^4.7.0.68"
+python-dotenv = "^0.21.1"
+numpy = "^1.24.2"
+uuid = "^1.30"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

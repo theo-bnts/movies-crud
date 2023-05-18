@@ -1,0 +1,59 @@
+{% extends "base.jinja" %}
+
+{% block title %}
+    Edit movie
+{% endblock title %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/styles/new-edit.css" />
+    <script src="/static/scripts/new-edit.js"></script>
+{% endblock head %}
+
+{% block content %}
+    <form class="movie" method="post" enctype="multipart/form-data">
+        <div class="cover">
+            {% if cover is defined %}
+                <img id="cover_preview" src="data:image/jpg;base64,{{ cover }}" alt="Cover" />
+                <label for="cover" class="button cover_label">Change cover</label>
+                <input id="cover" name="cover" type="file" accept="image/png, image/jpeg" />
+            {% else %}
+                <img id="cover_preview" />
+                <label for="cover" class="button cover_label">Change cover</label>
+                <input id="cover" name="cover" type="file" accept="image/png, image/jpeg" required />
+            {% endif %}
+        </div>
+        <div class="informations">
+            <div class="information">
+                <label for="title" class="key">Title</label>
+                <input id="title" name="title" type="text" value="{{ title }}" required />
+            </div>
+            <div class="information">
+                <label for="description" class="key">Description</label>
+                <textarea id="description" name="description" required>{{ description }}</textarea>
+            </div>
+            <div class="information">
+                <label for="year" class="key">Year</label>
+                <input id="year" name="year" type="number" min="1895" max="2100" value="{{ year }}" required />
+            </div>
+            <div class="information">
+                <label for="director" class="key">Director</label>
+                <input id="director" name="director" type="text" value="{{ director }}" required />
+            </div>
+            <div class="information">
+                <label class="key">Actors</label>
+                <div id="actors" class="actors">
+                    {% for index in range(1, actors|length + 1) %}
+                        <input name="actor_{{ index }}" type="text" value="{{ actors[index - 1] }}" required />
+                    {% endfor %}
+                    <input name="actor_{{ actors|length + 1 }}" type="text" {% if actors is not defined %}required{% endif %}/>
+                </div>
+            </div>
+            <div class="actions">
+                <button type="submit" class="button edit">{% if id is defined %}Edit{% else %}Add{% endif %}</button>
+                {% if id is defined %}
+                    <a href="/movie/{{ id }}/delete" class="button delete">Delete</a>
+                {% endif %}
+            </div>
+        </div>
+    </form>
+{% endblock content %}
